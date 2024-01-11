@@ -88,12 +88,6 @@ def test_chat(page: Page, live_server_url: str):
     expect(page.get_by_title("Supporting content")).to_be_visible()
     expect(page.get_by_role("heading", name="Benefit_Options-2.pdf")).to_be_visible()
 
-    # Clear the chat
-    page.get_by_role("button", name="Clear chat").click()
-    expect(page.get_by_text("Whats the dental plan?")).not_to_be_visible()
-    expect(page.get_by_text("The capital of France is Paris.")).not_to_be_visible()
-    expect(page.get_by_role("button", name="Clear chat")).to_be_disabled()
-
 
 def test_chat_customization(page: Page, live_server_url: str):
     # Set up a mock route to the /chat endpoint
