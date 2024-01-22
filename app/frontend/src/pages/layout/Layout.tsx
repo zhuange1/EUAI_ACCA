@@ -1,6 +1,6 @@
 import { Outlet, NavLink, Link } from "react-router-dom";
 
-import github from "../../assets/github.svg";
+import github from "../../assets/logo.png";
 
 import styles from "./Layout.module.css";
 
@@ -13,14 +13,22 @@ const Layout = () => {
         <div className={styles.layout}>
             <header className={styles.header} role={"banner"}>
                 <div className={styles.headerContainer}>
-                    <Link to="/" className={styles.headerTitleContainer}>
-                        <h3 className={styles.headerTitle}>EUAI CFA Ethics Buddy</h3>
-                    </Link>
+                    
+                                <a href="#" target={"_blank"} title="EAIB">
+                                    <img
+                                        src={github}
+                                        alt="EAIBEU logo"
+                                        aria-label="Link to github repository"
+                                        width="161px"
+                                        height="62px"
+                                        className={styles.githubLogo}
+                                    />
+                                </a>
                     <nav>
                         <ul className={styles.headerNavList}>
                             <li>
                                 <NavLink to="/" className={({ isActive }) => (isActive ? styles.headerNavPageLinkActive : styles.headerNavPageLink)}>
-                                    Chat
+                                    
                                 </NavLink>
                             </li>
                             <li className={styles.headerNavLeftMargin}>
