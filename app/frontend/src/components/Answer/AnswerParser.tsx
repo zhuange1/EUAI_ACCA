@@ -43,8 +43,7 @@ export function parseAnswerToHtml(answer: string, isStreaming: boolean, onCitati
 
             const path = getCitationFilePath(part);
 
-            return renderToStaticMarkup(
-            );
+            return renderToStaticMarkup(<></>);
         }
     });
 
