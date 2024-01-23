@@ -19,8 +19,8 @@ const Layout = () => {
                                         src={github}
                                         alt="EAIBEU logo"
                                         aria-label="Link to github repository"
-                                        width="161px"
-                                        height="62px"
+                                        width="121px"
+                                        height="45px"
                                         className={styles.githubLogo}
                                     />
                                 </a>
