@@ -43,12 +43,15 @@ export function parseAnswerToHtml(answer: string, isStreaming: boolean, onCitati
 
             const path = getCitationFilePath(part);
 
+            const placeholder = "placeholder";
+            
              return renderToStaticMarkup(
                 <a className="supContainer" title={part} onClick={() => onCitationClicked(path)}>
+                    {placeholder}
                 </a>
             );
         }
-    });
+     }).filter((fragment): fragment is string => fragment !== undefined);
 
     return {
         answerHtml: fragments.join(""),
