@@ -128,6 +128,9 @@ async def ask():
     if not request.is_json:
         return jsonify({"error": "request must be json"}), 415
     request_json = await request.get_json()
+    
+    logger.info(f"ASK endpoint received question: {request_json['messages'][-1]['content']}")
+
     context = request_json.get("context", {})
     auth_helper = current_app.config[CONFIG_AUTH_CLIENT]
     try:
@@ -167,6 +170,9 @@ async def chat():
     if not request.is_json:
         return jsonify({"error": "request must be json"}), 415
     request_json = await request.get_json()
+    
+    logger.info(f"CHAT endpoint received message: {request_json['messages'][-1]['content']}")
+
     context = request_json.get("context", {})
     auth_helper = current_app.config[CONFIG_AUTH_CLIENT]
     try:
